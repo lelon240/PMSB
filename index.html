@@ -1,0 +1,1568 @@
+<!DOCTYPE html>
+<html lang="pl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PMSB Andrzej Kisło | Roboty Murarskie i Wykończeniowe | Gliwice</title>
+    <meta name="description" content="Profesjonalne roboty murarskie, wykończenia wnętrz oraz usługi budowlane w Gliwicach. PMSB Andrzej Kisło – solidny wykonawca z oceną 5.0/5.">
+    <meta name="keywords" content="roboty murarskie Gliwice, firma budowlana Gliwice, wykończenia wnętrz Gliwice, remonty Gliwice, usługi budowlane Gliwice, murarz Gliwice">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="FIRMA USŁUGOWA PMSB ANDRZEJ KISŁO">
+    <meta property="og:title" content="PMSB Andrzej Kisło | Roboty Murarskie i Wykończeniowe | Gliwice">
+    <meta property="og:description" content="Profesjonalne roboty murarskie, wykończenia wnętrz oraz usługi budowlane w Gliwicach. Solidny wykonawca z oceną 5.0/5.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pl_PL">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        neon: '#00d4ff',
+                        'neon-dark': '#0099cc',
+                        'neon-light': '#66e8ff',
+                        silver: '#c0c0c0',
+                        'silver-light': '#e8e8e8',
+                        'dark-950': '#050510',
+                        'dark-900': '#0a0a1a',
+                        'dark-800': '#111128',
+                        'dark-700': '#1a1a3e',
+                        'dark-600': '#252550',
+                    },
+                    fontFamily: {
+                        'orbitron': ['Orbitron', 'sans-serif'],
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #050510;
+            color: #e8e8e8;
+            overflow-x: hidden;
+        }
+
+        /* Loading Screen */
+        #loader {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: #050510;
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            transition: opacity 0.6s ease, visibility 0.6s ease;
+        }
+        #loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .loader-logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #00d4ff, #c0c0c0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: pulseGlow 1.5s ease-in-out infinite;
+        }
+        .loader-bar {
+            width: 200px;
+            height: 3px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 10px;
+            margin-top: 30px;
+            overflow: hidden;
+        }
+        .loader-bar-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #00d4ff, #c0c0c0);
+            border-radius: 10px;
+            animation: fillBar 2s ease-in-out forwards;
+        }
+        @keyframes fillBar {
+            0% { width: 0%; }
+            50% { width: 70%; }
+            100% { width: 100%; }
+        }
+        @keyframes pulseGlow {
+            0%, 100% { filter: drop-shadow(0 0 10px rgba(0,212,255,0.3)); }
+            50% { filter: drop-shadow(0 0 30px rgba(0,212,255,0.7)); }
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #050510; }
+        ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #00d4ff, #0099cc); border-radius: 10px; }
+
+        /* Glass Effect */
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        .glass-strong {
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Neon Glow */
+        .neon-glow {
+            box-shadow: 0 0 15px rgba(0,212,255,0.15), 0 0 30px rgba(0,212,255,0.05), inset 0 0 15px rgba(0,212,255,0.05);
+        }
+        .neon-glow-strong {
+            box-shadow: 0 0 20px rgba(0,212,255,0.25), 0 0 40px rgba(0,212,255,0.1), inset 0 0 20px rgba(0,212,255,0.08);
+        }
+        .neon-text {
+            text-shadow: 0 0 10px rgba(0,212,255,0.5), 0 0 20px rgba(0,212,255,0.2);
+        }
+        .neon-border {
+            border-color: rgba(0,212,255,0.3);
+            box-shadow: 0 0 15px rgba(0,212,255,0.1);
+        }
+
+        /* Gradient text */
+        .gradient-text {
+            background: linear-gradient(135deg, #00d4ff, #c0c0c0, #00d4ff);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shimmer 4s linear infinite;
+        }
+        @keyframes shimmer {
+            0% { background-position: 0% center; }
+            100% { background-position: 200% center; }
+        }
+
+        /* Animated Background */
+        .hero-bg {
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: 
+                radial-gradient(ellipse at 20% 50%, rgba(0,212,255,0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 20%, rgba(192,192,192,0.05) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 80%, rgba(0,212,255,0.06) 0%, transparent 50%);
+            animation: bgShift 10s ease-in-out infinite;
+        }
+        @keyframes bgShift {
+            0%, 100% { transform: scale(1) translate(0, 0); }
+            33% { transform: scale(1.05) translate(-2%, 1%); }
+            66% { transform: scale(1.02) translate(2%, -1%); }
+        }
+
+        /* Grid Pattern */
+        .grid-pattern {
+            background-image: 
+                linear-gradient(rgba(0,212,255,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0,212,255,0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+
+        /* Scroll Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-60px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-left.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(60px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-right.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .reveal-scale {
+            opacity: 0;
+            transform: scale(0.85);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-scale.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Float Animation */
+        .float {
+            animation: floatAnim 6s ease-in-out infinite;
+        }
+        @keyframes floatAnim {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        /* Service Cards */
+        .service-card {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: linear-gradient(135deg, rgba(0,212,255,0.05), transparent);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        .service-card:hover::before {
+            opacity: 1;
+        }
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 0 30px rgba(0,212,255,0.15), 0 20px 40px rgba(0,0,0,0.3);
+            border-color: rgba(0,212,255,0.3);
+        }
+
+        /* Gallery Items */
+        .gallery-item {
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+        }
+        .gallery-item img {
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        .gallery-item .overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 30%, rgba(5,5,16,0.9) 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            display: flex;
+            align-items: flex-end;
+            padding: 20px;
+        }
+        .gallery-item:hover .overlay {
+            opacity: 1;
+        }
+
+        /* Advantages */
+        .advantage-item {
+            transition: all 0.3s ease;
+        }
+        .advantage-item:hover {
+            transform: translateX(8px);
+        }
+        .advantage-item:hover .adv-icon {
+            box-shadow: 0 0 20px rgba(0,212,255,0.4);
+            border-color: rgba(0,212,255,0.6);
+        }
+
+        /* Testimonial Slider */
+        .testimonial-track {
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Button Styles */
+        .btn-neon {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .btn-neon::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0,212,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        .btn-neon:hover::before {
+            left: 100%;
+        }
+        .btn-neon:hover {
+            box-shadow: 0 0 25px rgba(0,212,255,0.35), 0 0 50px rgba(0,212,255,0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Navbar */
+        .nav-scrolled {
+            background: rgba(5,5,16,0.9) !important;
+            backdrop-filter: blur(20px) !important;
+            border-bottom: 1px solid rgba(0,212,255,0.1) !important;
+        }
+
+        /* Particles */
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: rgba(0,212,255,0.4);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+
+        /* Counter Animation */
+        .counter-value {
+            font-variant-numeric: tabular-nums;
+        }
+
+        /* Star Rating */
+        .star-filled { color: #fbbf24; }
+        .star-empty { color: rgba(255,255,255,0.15); }
+
+        /* Contact Form */
+        .form-input {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            transition: all 0.3s ease;
+        }
+        .form-input:focus {
+            outline: none;
+            border-color: rgba(0,212,255,0.5);
+            box-shadow: 0 0 15px rgba(0,212,255,0.1);
+            background: rgba(255,255,255,0.05);
+        }
+
+        /* Pulse dot */
+        .pulse-dot {
+            animation: pulseDot 2s ease-in-out infinite;
+        }
+        @keyframes pulseDot {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(0,212,255,0.4); }
+            50% { box-shadow: 0 0 0 10px rgba(0,212,255,0); }
+        }
+
+        /* Staggered children */
+        .stagger-children > * {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        .stagger-children.active > *:nth-child(1) { transition-delay: 0.1s; }
+        .stagger-children.active > *:nth-child(2) { transition-delay: 0.2s; }
+        .stagger-children.active > *:nth-child(3) { transition-delay: 0.3s; }
+        .stagger-children.active > *:nth-child(4) { transition-delay: 0.4s; }
+        .stagger-children.active > *:nth-child(5) { transition-delay: 0.5s; }
+        .stagger-children.active > *:nth-child(6) { transition-delay: 0.6s; }
+        .stagger-children.active > * {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Scroll indicator */
+        .scroll-indicator {
+            animation: scrollBounce 2s ease-in-out infinite;
+        }
+        @keyframes scrollBounce {
+            0%, 100% { transform: translateY(0); opacity: 1; }
+            50% { transform: translateY(10px); opacity: 0.5; }
+        }
+
+        /* Image shimmer loading */
+        .img-shimmer {
+            background: linear-gradient(90deg, rgba(255,255,255,0.02) 25%, rgba(255,255,255,0.06) 50%, rgba(255,255,255,0.02) 75%);
+            background-size: 200% 100%;
+            animation: imgShimmer 1.5s ease-in-out infinite;
+        }
+        @keyframes imgShimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+
+        /* Section divider */
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(0,212,255,0.2), rgba(192,192,192,0.1), transparent);
+        }
+
+        /* Lightbox */
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: rgba(5,5,16,0.95);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(10px);
+        }
+        .lightbox.active {
+            display: flex;
+        }
+        .lightbox img {
+            max-width: 90%;
+            max-height: 85vh;
+            border-radius: 12px;
+            box-shadow: 0 0 40px rgba(0,212,255,0.15);
+        }
+
+        /* Smooth number transition */
+        @keyframes countUp {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-dark-950 text-silver-light">
+
+    <!-- LOADING SCREEN -->
+    <div id="loader">
+        <div class="loader-logo">PMSB</div>
+        <p class="text-sm text-silver/50 mt-4 tracking-[0.3em] uppercase font-inter">Andrzej Kisło</p>
+        <div class="loader-bar">
+            <div class="loader-bar-fill"></div>
+        </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-[100] transition-all duration-500 border-b border-transparent">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 lg:h-20">
+                <a href="#hero" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-neon to-neon-dark flex items-center justify-center font-orbitron font-bold text-dark-950 text-sm group-hover:shadow-[0_0_20px_rgba(0,212,255,0.4)] transition-all duration-300">P</div>
+                    <div>
+                        <span class="font-orbitron font-bold text-white text-sm lg:text-base tracking-wider">PMSB</span>
+                        <span class="hidden sm:block text-[10px] text-neon/60 tracking-[0.2em] uppercase">Andrzej Kisło</span>
+                    </div>
+                </a>
+                <div class="hidden lg:flex items-center gap-8">
+                    <a href="#o-firmie" class="text-sm text-silver/70 hover:text-neon transition-colors duration-300 tracking-wide">O firmie</a>
+                    <a href="#uslugi" class="text-sm text-silver/70 hover:text-neon transition-colors duration-300 tracking-wide">Usługi</a>
+                    <a href="#dlaczego-my" class="text-sm text-silver/70 hover:text-neon transition-colors duration-300 tracking-wide">Przewagi</a>
+                    <a href="#opinie" class="text-sm text-silver/70 hover:text-neon transition-colors duration-300 tracking-wide">Opinie</a>
+                    <a href="#realizacje" class="text-sm text-silver/70 hover:text-neon transition-colors duration-300 tracking-wide">Realizacje</a>
+                    <a href="#kontakt" class="text-sm text-silver/70 hover:text-neon transition-colors duration-300 tracking-wide">Kontakt</a>
+                    <a href="tel:518100889" class="btn-neon bg-neon text-dark-950 px-6 py-2.5 rounded-lg font-semibold text-sm tracking-wide hover:bg-neon-light">
+                        Zadzwoń
+                    </a>
+                </div>
+                <button id="mobileMenuBtn" class="lg:hidden text-white p-2">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MOBILE MENU -->
+    <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 w-80 h-full bg-dark-900/95 backdrop-blur-xl z-[200] border-l border-white/5 p-8 flex flex-col">
+        <button id="mobileMenuClose" class="self-end text-white mb-8 p-2">
+            <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+        <div class="flex flex-col gap-6">
+            <a href="#hero" class="mobile-link text-lg text-silver/80 hover:text-neon transition-colors duration-300 font-light tracking-wide">Start</a>
+            <a href="#o-firmie" class="mobile-link text-lg text-silver/80 hover:text-neon transition-colors duration-300 font-light tracking-wide">O firmie</a>
+            <a href="#uslugi" class="mobile-link text-lg text-silver/80 hover:text-neon transition-colors duration-300 font-light tracking-wide">Usługi</a>
+            <a href="#dlaczego-my" class="mobile-link text-lg text-silver/80 hover:text-neon transition-colors duration-300 font-light tracking-wide">Przewagi</a>
+            <a href="#opinie" class="mobile-link text-lg text-silver/80 hover:text-neon transition-colors duration-300 font-light tracking-wide">Opinie</a>
+            <a href="#realizacje" class="mobile-link text-lg text-silver/80 hover:text-neon transition-colors duration-300 font-light tracking-wide">Realizacje</a>
+            <a href="#kontakt" class="mobile-link text-lg text-silver/80 hover:text-neon transition-colors duration-300 font-light tracking-wide">Kontakt</a>
+        </div>
+        <div class="mt-auto">
+            <a href="tel:518100889" class="btn-neon bg-neon text-dark-950 px-6 py-3 rounded-lg font-semibold text-base tracking-wide block text-center hover:bg-neon-light">
+                Zadzwoń teraz
+            </a>
+            <p class="text-silver/40 text-xs mt-4 text-center">518 100 889</p>
+        </div>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero-bg min-h-screen flex items-center relative grid-pattern">
+        <!-- Particles container -->
+        <div id="particles" class="absolute inset-0 pointer-events-none overflow-hidden"></div>
+        
+        <!-- Hero Image Overlay -->
+        <div class="absolute inset-0">
+            <img src="http://static.photos/construction/1200x630/77" alt="Budownictwo" class="w-full h-full object-cover opacity-20">
+            <div class="absolute inset-0 bg-gradient-to-b from-dark-950/70 via-dark-950/50 to-dark-950"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-dark-950/80 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 w-full">
+            <div class="max-w-3xl">
+                <div class="inline-flex items-center gap-2 glass rounded-full px-4 py-2 mb-8 reveal">
+                    <span class="w-2 h-2 rounded-full bg-neon pulse-dot"></span>
+                    <span class="text-xs tracking-[0.2em] uppercase text-neon/80 font-medium">Firma budowlana Gliwice</span>
+                </div>
+                
+                <h1 class="font-orbitron text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 reveal" style="transition-delay:0.15s">
+                    <span class="text-white">Budujemy </span>
+                    <span class="gradient-text">jakość,</span><br>
+                    <span class="text-white">która zostaje </span>
+                    <span class="gradient-text">na lata</span>
+                </h1>
+                
+                <p class="text-base sm:text-lg text-silver/60 leading-relaxed mb-10 max-w-xl font-light reveal" style="transition-delay:0.3s">
+                    Profesjonalne roboty murarskie, wykończenia wnętrz oraz usługi specjalistyczne dla klientów indywidualnych i biznesowych.
+                </p>
+                
+                <div class="flex flex-wrap gap-4 reveal" style="transition-delay:0.45s">
+                    <a href="tel:518100889" class="btn-neon bg-neon text-dark-950 px-8 py-4 rounded-xl font-semibold tracking-wide flex items-center gap-2 text-sm hover:bg-neon-light">
+                        <i data-lucide="phone" class="w-4 h-4"></i>
+                        Zadzwoń teraz
+                    </a>
+                    <a href="#kontakt" class="btn-neon glass-strong text-white px-8 py-4 rounded-xl font-semibold tracking-wide flex items-center gap-2 text-sm border border-white/10 hover:border-neon/30">
+                        <i data-lucide="calculator" class="w-4 h-4"></i>
+                        Darmowa wycena
+                    </a>
+                    <a href="#realizacje" class="btn-neon glass text-silver px-8 py-4 rounded-xl font-medium tracking-wide flex items-center gap-2 text-sm hover:text-white">
+                        <i data-lucide="image" class="w-4 h-4"></i>
+                        Zobacz realizacje
+                    </a>
+                </div>
+
+                <!-- Trust badges -->
+                <div class="flex flex-wrap items-center gap-6 mt-12 reveal" style="transition-delay:0.6s">
+                    <div class="flex items-center gap-2">
+                        <div class="flex">
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                        </div>
+                        <span class="text-sm text-silver/60">5.0/5 Google</span>
+                    </div>
+                    <div class="w-px h-4 bg-white/10"></div>
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="shield-check" class="w-4 h-4 text-neon"></i>
+                        <span class="text-sm text-silver/60">Licencjonowana działalność</span>
+                    </div>
+                    <div class="w-px h-4 bg-white/10 hidden sm:block"></div>
+                    <div class="hidden sm:flex items-center gap-2">
+                        <i data-lucide="map-pin" class="w-4 h-4 text-neon"></i>
+                        <span class="text-sm text-silver/60">Gliwice i okolice</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 scroll-indicator">
+            <div class="flex flex-col items-center gap-2">
+                <span class="text-[10px] tracking-[0.3em] uppercase text-silver/30">Przewiń</span>
+                <i data-lucide="chevron-down" class="w-5 h-5 text-neon/40"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION DIVIDER -->
+    <div class="section-divider"></div>
+
+    <!-- O FIRMIE -->
+    <section id="o-firmie" class="py-24 lg:py-32 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-neon/5 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="inline-block text-xs tracking-[0.3em] uppercase text-neon/70 font-medium mb-4 reveal">O nas</span>
+                <h2 class="font-orbitron text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 reveal">
+                    Profesjonalny wykonawca <span class="gradient-text">z Gliwic</span>
+                </h2>
+                <p class="text-silver/50 max-w-2xl mx-auto text-base leading-relaxed reveal">
+                    Działamy na terenie Gliwic i okolic, oferując pełen zakres usług budowlanych. Naszym priorytetem jest jakość, terminowość i zadowolenie klienta.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 stagger-children">
+                <div class="glass neon-glow rounded-2xl p-6 text-center group hover:border-neon/20 transition-all duration-300">
+                    <div class="w-14 h-14 rounded-xl bg-neon/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-neon/20 transition-colors duration-300">
+                        <i data-lucide="file-text" class="w-6 h-6 text-neon"></i>
+                    </div>
+                    <p class="text-xs tracking-[0.15em] uppercase text-silver/40 mb-2">NIP</p>
+                    <p class="text-white font-semibold text-lg tracking-wide">6312736145</p>
+                </div>
+                <div class="glass neon-glow rounded-2xl p-6 text-center group hover:border-neon/20 transition-all duration-300">
+                    <div class="w-14 h-14 rounded-xl bg-neon/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-neon/20 transition-colors duration-300">
+                        <i data-lucide="building-2" class="w-6 h-6 text-neon"></i>
+                    </div>
+                    <p class="text-xs tracking-[0.15em] uppercase text-silver/40 mb-2">REGON</p>
+                    <p class="text-white font-semibold text-lg tracking-wide">543218336</p>
+                </div>
+                <div class="glass neon-glow rounded-2xl p-6 text-center group hover:border-neon/20 transition-all duration-300">
+                    <div class="w-14 h-14 rounded-xl bg-neon/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-neon/20 transition-colors duration-300">
+                        <i data-lucide="map-pin" class="w-6 h-6 text-neon"></i>
+                    </div>
+                    <p class="text-xs tracking-[0.15em] uppercase text-silver/40 mb-2">Siedziba</p>
+                    <p class="text-white font-semibold text-lg tracking-wide">Gliwice</p>
+                </div>
+                <div class="glass neon-glow rounded-2xl p-6 text-center group hover:border-neon/20 transition-all duration-300">
+                    <div class="w-14 h-14 rounded-xl bg-neon/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-neon/20 transition-colors duration-300">
+                        <i data-lucide="calendar" class="w-6 h-6 text-neon"></i>
+                    </div>
+                    <p class="text-xs tracking-[0.15em] uppercase text-silver/40 mb-2">Działalność od</p>
+                    <p class="text-white font-semibold text-lg tracking-wide">2025 roku</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- USŁUGI -->
+    <section id="uslugi" class="py-24 lg:py-32 relative overflow-hidden">
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-neon/5 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="inline-block text-xs tracking-[0.3em] uppercase text-neon/70 font-medium mb-4 reveal">Nasza oferta</span>
+                <h2 class="font-orbitron text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 reveal">
+                    Nasze <span class="gradient-text">usługi</span>
+                </h2>
+                <p class="text-silver/50 max-w-2xl mx-auto text-base leading-relaxed reveal">
+                    Oferujemy kompleksowe usługi budowlane na najwyższym poziomie. Od murowania po wykończenia wnętrz.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Roboty murarskie -->
+                <div class="service-card glass rounded-2xl p-8 reveal" style="transition-delay:0.1s">
+                    <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-neon/20 to-neon/5 flex items-center justify-center mb-6 border border-neon/10">
+                        <i data-lucide="brick-wall" class="w-8 h-8 text-neon"></i>
+                    </div>
+                    <h3 class="font-orbitron text-xl font-bold text-white mb-2">Roboty murarskie</h3>
+                    <p class="text-xs text-neon/50 tracking-wider uppercase mb-6">PKD 43.91.Z</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3 text-silver/60 text-sm">
+                            <i data-lucide="check" class="w-4 h-4 text-neon flex-shrink-0"></i>
+                            Ściany działowe
+                        </li>
+                        <li class="flex items-center gap-3 text-silver/60 text-sm">
+                            <i data-lucide="check" class="w-4 h-4 text-neon flex-shrink-0"></i>
+                            Murowanie
+                        </li>
+                        <li class="flex items-center gap-3 text-silver/60 text-sm">
+                            <i data-lucide="check" class="w-4 h-4 text-neon flex-shrink-0"></i>
+                            Prace konstrukcyjne
+                        </li>
+                        <li class="flex items-center gap-3 text-silver/60 text-sm">
+                            <i data-lucide="check" class="w-4 h-4 text-neon flex-shrink-0"></i>
+                            Roboty budowlane
+                        </li>
+                    </ul>
+                    <div class="mt-8 pt-6 border-t border-white/5">
+                        <a href="#kontakt" class="text-neon text-sm font-medium flex items-center gap-2 hover:gap-3 transition-all duration-300">
+                            Zapytaj o wycenę <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Wykończenia wnętrz -->
+                <div class="service-card glass rounded-2xl p-8 reveal" style="transition-delay:0.2s">
+                    <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-neon/20 to-neon/5 flex items-center justify-center mb-6 border border-neon/10">
+                        <i data-lucide="paint-roller" class="w-8 h-8 text-neon"></i>
+                    </div>
+                    <h3 class="font-orbitron text-xl font-bold text-white mb-2">Wykończenia wnętrz</h3>
+                    <p class="text-xs text-neon/50 tracking-wider uppercase mb-6">PKD 43.35.Z</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3 text-silver/60 text-sm">
+                            <i data-lucide="check" class="w-4 h-4 text-neon flex-shrink-0"></i>
+                            Gładzie
+                        </li>
+                        <li class="flex items-center gap-3 text-silver/60 text-sm">
+                            <i data-lucide="check" class="w-4 h-4 text-neon flex-shrink-0"></i>
+                            Malowanie
+                        </li>
+                        <li class="flex items-center gap-3 text-silver/60 text-sm">
+                            <i data-lucide="check" class="w-4 h-4 text-neon flex-shrink-0"></i>
+                            Remonty mieszkań
+                        </li>
+                        <li class="flex items-center gap-3 text-silver/60 text-sm">
+                            <i data-lucide="check" class="w-4 h-4 text-neon flex-shrink-0"></i>
+                            Kompleksowe wykończenia
+                        </li>
+                    </ul>
+                    <div class="mt-8 pt-6 border-t border-white/5">
+                        <a href="#kontakt" class="text-neon text-sm font-medium flex items-center gap-2 hover:gap-3 transition-all duration-300">
+                            Zapytaj o wycenę <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Sprzątanie -->
+                <div class="service-card glass rounded-2xl p-8 reveal" style="transition-delay:0.3s">
+                    <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-neon/20 to-neon/5 flex items-center justify-center mb-6 border border-neon/10">
+                        <i data-lucide="sparkles" class="w-8 h-8 text-neon"></i>
+                    </div>
+                    <h3 class="font-orbitron text-xl font-bold text-white mb-2">Sprzątanie obiektów</h3>
+                    <p class="text-xs text-neon/50 tracking-wider uppercase mb-6">PKD 81.22.B</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3 text-silver/60 text-sm">
+                            <i data-lucide="check" class="w-4 h-4 text-neon flex-shrink-0"></i>
+                            Hale
+                        </li>
+                        <li class="flex items-center gap-3 text-silver/60 text-sm">
+                            <i data-lucide="check" class="w-4 h-4 text-neon flex-shrink-0"></i>
+                            Magazyny
+                        </li>
+                        <li class="flex items-center gap-3 text-silver/60 text-sm">
+                            <i data-lucide="check" class="w-4 h-4 text-neon flex-shrink-0"></i>
+                            Obiekty przemysłowe
+                        </li>
+                        <li class="flex items-center gap-3 text-silver/60 text-sm">
+                            <i data-lucide="check" class="w-4 h-4 text-neon flex-shrink-0"></i>
+                            Sprzątanie specjalistyczne
+                        </li>
+                    </ul>
+                    <div class="mt-8 pt-6 border-t border-white/5">
+                        <a href="#kontakt" class="text-neon text-sm font-medium flex items-center gap-2 hover:gap-3 transition-all duration-300">
+                            Zapytaj o wycenę <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- DLACZEGO MY -->
+    <section id="dlaczego-my" class="py-24 lg:py-32 relative overflow-hidden">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-neon/3 rounded-full blur-[150px] pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <span class="inline-block text-xs tracking-[0.3em] uppercase text-neon/70 font-medium mb-4 reveal">Nasze przewagi</span>
+                    <h2 class="font-orbitron text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 reveal">
+                        Dlaczego <span class="gradient-text">my?</span>
+                    </h2>
+                    <p class="text-silver/50 text-base leading-relaxed mb-10 reveal">
+                        Wybierając naszą firmę, zyskujesz pewność, że powierzasz prace budowlane profesjonalistom. Nasza rzetelność i jakość wykonania mówią same za siebie.
+                    </p>
+
+                    <div class="space-y-5 stagger-children">
+                        <div class="advantage-item flex items-center gap-4 group cursor-default">
+                            <div class="adv-icon w-12 h-12 rounded-xl glass border border-white/5 flex items-center justify-center transition-all duration-300 flex-shrink-0">
+                                <i data-lucide="clock" class="w-5 h-5 text-neon"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-semibold">Terminowość</h4>
+                                <p class="text-silver/40 text-sm">Realizujemy zlecenia w ustalonym terminie</p>
+                            </div>
+                        </div>
+                        <div class="advantage-item flex items-center gap-4 group cursor-default">
+                            <div class="adv-icon w-12 h-12 rounded-xl glass border border-white/5 flex items-center justify-center transition-all duration-300 flex-shrink-0">
+                                <i data-lucide="target" class="w-5 h-5 text-neon"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-semibold">Dokładność wykonania</h4>
+                                <p class="text-silver/40 text-sm">Precyzja na każdym etapie prac</p>
+                            </div>
+                        </div>
+                        <div class="advantage-item flex items-center gap-4 group cursor-default">
+                            <div class="adv-icon w-12 h-12 rounded-xl glass border border-white/5 flex items-center justify-center transition-all duration-300 flex-shrink-0">
+                                <i data-lucide="headset" class="w-5 h-5 text-neon"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-semibold">Profesjonalna obsługa</h4>
+                                <p class="text-silver/40 text-sm">Indywidualne podejście do każdego klienta</p>
+                            </div>
+                        </div>
+                        <div class="advantage-item flex items-center gap-4 group cursor-default">
+                            <div class="adv-icon w-12 h-12 rounded-xl glass border border-white/5 flex items-center justify-center transition-all duration-300 flex-shrink-0">
+                                <i data-lucide="award" class="w-5 h-5 text-neon"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-semibold">Doświadczenie</h4>
+                                <p class="text-silver/40 text-sm">Wiedza i umiejętności poparte praktyką</p>
+                            </div>
+                        </div>
+                        <div class="advantage-item flex items-center gap-4 group cursor-default">
+                            <div class="adv-icon w-12 h-12 rounded-xl glass border border-white/5 flex items-center justify-center transition-all duration-300 flex-shrink-0">
+                                <i data-lucide="user-check" class="w-5 h-5 text-neon"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-semibold">Indywidualne podejście</h4>
+                                <p class="text-silver/40 text-sm">Dopasowujemy się do Twoich potrzeb</p>
+                            </div>
+                        </div>
+                        <div class="advantage-item flex items-center gap-4 group cursor-default">
+                            <div class="adv-icon w-12 h-12 rounded-xl glass border border-white/5 flex items-center justify-center transition-all duration-300 flex-shrink-0">
+                                <i data-lucide="gem" class="w-5 h-5 text-neon"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-semibold">Wysoka jakość usług</h4>
+                                <p class="text-silver/40 text-sm">Potwierdzona oceną 5.0/5 na Google</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative reveal-right">
+                    <div class="relative">
+                        <img src="http://static.photos/construction/640x360/55" alt="Prace budowlane" class="rounded-2xl w-full object-cover aspect-[4/3] neon-glow-strong">
+                        <div class="absolute inset-0 rounded-2xl bg-gradient-to-t from-dark-950/60 to-transparent"></div>
+                        
+                        <!-- Floating card -->
+                        <div class="absolute -bottom-6 -left-6 glass-strong rounded-xl p-5 neon-glow float">
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 rounded-lg bg-neon/20 flex items-center justify-center">
+                                    <i data-lucide="star" class="w-6 h-6 text-yellow-400 fill-yellow-400"></i>
+                                </div>
+                                <div>
+                                    <p class="text-white font-bold text-xl">5.0/5</p>
+                                    <p class="text-silver/40 text-xs">Ocena Google</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Floating card 2 -->
+                        <div class="absolute -top-6 -right-6 glass-strong rounded-xl p-5 neon-glow float" style="animation-delay: -3s;">
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 rounded-lg bg-neon/20 flex items-center justify-center">
+                                    <i data-lucide="check-circle" class="w-6 h-6 text-neon"></i>
+                                </div>
+                                <div>
+                                    <p class="text-white font-bold text-xl">100%</p>
+                                    <p class="text-silver/40 text-xs">Zadowolonych klientów</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- OPINIE -->
+    <section id="opinie" class="py-24 lg:py-32 relative overflow-hidden">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-neon/3 rounded-full blur-[150px] pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="inline-block text-xs tracking-[0.3em] uppercase text-neon/70 font-medium mb-4 reveal">Opinie klientów</span>
+                <h2 class="font-orbitron text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 reveal">
+                    Co mówią <span class="gradient-text">nasi klienci</span>
+                </h2>
+                <div class="flex items-center justify-center gap-3 reveal">
+                    <div class="flex">
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
+                    </div>
+                    <span class="text-white font-bold text-lg">5.0 / 5</span>
+                    <span class="text-silver/40 text-sm">na podstawie 9 opinii</span>
+                </div>
+            </div>
+
+            <!-- Testimonial Slider -->
+            <div class="relative reveal">
+                <div class="overflow-hidden rounded-2xl">
+                    <div id="testimonialTrack" class="testimonial-track flex">
+                        <!-- Testimonial 1 -->
+                        <div class="w-full flex-shrink-0 px-2">
+                            <div class="glass-strong neon-glow rounded-2xl p-8 md:p-12 max-w-3xl mx-auto text-center">
+                                <div class="flex justify-center mb-6">
+                                    <i data-lucide="quote" class="w-10 h-10 text-neon/20"></i>
+                                </div>
+                                <p class="text-white text-lg md:text-xl leading-relaxed mb-8 font-light italic">
+                                    „Świetna firma – solidna, terminowa i bardzo profesjonalna. Prace wykonane dokładnie i bez problemów, a kontakt z wykonawcą był wzorowy. Zdecydowanie polecam!"
+                                </p>
+                                <div class="flex items-center justify-center gap-3">
+                                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-neon/30 to-neon/10 flex items-center justify-center">
+                                        <span class="text-neon font-semibold text-sm">MS</span>
+                                    </div>
+                                    <div class="text-left">
+                                        <p class="text-white font-semibold text-sm">Martyna Stuglik</p>
+                                        <div class="flex gap-0.5">
+                                            <i data-lucide="star" class="w-3 h-3 text-yellow-400 fill-yellow-400"></i>
+                                            <i data-lucide="star" class="w-3 h-3 text-yellow-400 fill-yellow-400"></i>
+                                            <i data-lucide="star" class="w-3 h-3 text-yellow-400 fill-yellow-400"></i>
+                                            <i data-lucide="star" class="w-3 h-3 text-yellow-400 fill-yellow-400"></i>
+                                            <i data-lucide="star" class="w-3 h-3 text-yellow-400 fill-yellow-400"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 2 -->
+                        <div class="w-full flex-shrink-0 px-2">
+                            <div class="glass-strong neon-glow rounded-2xl p-8 md:p-12 max-w-3xl mx-auto text-center">
+                                <div class="flex justify-center mb-6">
+                                    <i data-lucide="quote" class="w-10 h-10 text-neon/20"></i>
+                                </div>
+                                <p class="text-white text-lg md:text-xl leading-relaxed mb-8 font-light italic">
+                                    „Profesjonalna jakość usług i super podejście do klienta, gorąco polecam."
+                                </p>
+                                <div class="flex items-center justify-center gap-3">
+                                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-neon/30 to-neon/10 flex items-center justify-center">
+                                        <span class="text-neon font-semibold text-sm">MM</span>
+                                    </div>
+                                    <div class="text-left">
+                                        <p class="text-white font-semibold text-sm">Michał Michalski</p>
+                                        <div class="flex gap-0.5">
+                                            <i data-lucide="star" class="w-3 h-3 text-yellow-400 fill-yellow-400"></i>
+                                            <i data-lucide="star" class="w-3 h-3 text-yellow-400 fill-yellow-400"></i>
+                                            <i data-lucide="star" class="w-3 h-3 text-yellow-400 fill-yellow-400"></i>
+                                            <i data-lucide="star" class="w-3 h-3 text-yellow-400 fill-yellow-400"></i>
+                                            <i data-lucide="star" class="w-3 h-3 text-yellow-400 fill-yellow-400"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 3 -->
+                        <div class="w-full flex-shrink-0 px-2">
+                            <div class="glass-strong neon-glow rounded-2xl p-8 md:p-12 max-w-3xl mx-auto text-center">
+                                <div class="flex justify-center mb-6">
+                                    <i data-lucide="quote" class="w-10 h-10 text-neon/20"></i>
+                                </div>
+                                <p class="text-white text-lg md:text-xl leading-relaxed mb-8 font-light italic">
+                                    „Bardzo polecam! Konkretna robota konkretnych fachowców!"
+                                </p>
+                                <div class="flex items-center justify-center gap-3">
+                                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-neon/30 to-neon/10 flex items-center justify-center">
+                                        <span class="text-neon font-semibold text-sm">MA</span>
+                                    </div>
+                                    <div class="text-left">
+                                        <p class="text-white font-semibold text-sm">Marcel Anderson</p>
+                                        <div class="flex gap-0.5">
+                                            <i data-lucide="star" class="w-3 h-3 text-yellow-400 fill-yellow-400"></i>
+                                            <i data-lucide="star" class="w-3 h-3 text-yellow-400 fill-yellow-400"></i>
+                                            <i data-lucide="star" class="w-3 h-3 text-yellow-400 fill-yellow-400"></i>
+                                            <i data-lucide="star" class="w-3 h-3 text-yellow-400 fill-yellow-400"></i>
+                                            <i data-lucide="star" class="w-3 h-3 text-yellow-400 fill-yellow-400"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slider Controls -->
+                <div class="flex items-center justify-center gap-4 mt-8">
+                    <button id="prevTestimonial" class="w-12 h-12 rounded-full glass border border-white/10 flex items-center justify-center hover:border-neon/30 hover:bg-neon/10 transition-all duration-300">
+                        <i data-lucide="chevron-left" class="w-5 h-5 text-silver/70"></i>
+                    </button>
+                    <div class="flex gap-2" id="sliderDots">
+                        <button class="slider-dot w-2 h-2 rounded-full bg-neon transition-all duration-300" data-index="0"></button>
+                        <button class="slider-dot w-2 h-2 rounded-full bg-silver/20 transition-all duration-300" data-index="1"></button>
+                        <button class="slider-dot w-2 h-2 rounded-full bg-silver/20 transition-all duration-300" data-index="2"></button>
+                    </div>
+                    <button id="nextTestimonial" class="w-12 h-12 rounded-full glass border border-white/10 flex items-center justify-center hover:border-neon/30 hover:bg-neon/10 transition-all duration-300">
+                        <i data-lucide="chevron-right" class="w-5 h-5 text-silver/70"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- REALIZACJE -->
+    <section id="realizacje" class="py-24 lg:py-32 relative overflow-hidden">
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-neon/5 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="inline-block text-xs tracking-[0.3em] uppercase text-neon/70 font-medium mb-4 reveal">Portfolio</span>
+                <h2 class="font-orbitron text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 reveal">
+                    Nasze <span class="gradient-text">realizacje</span>
+                </h2>
+                <p class="text-silver/50 max-w-2xl mx-auto text-base leading-relaxed reveal">
+                    Zapoznaj się z naszymi wybranymi realizacjami. Każdy projekt realizujemy z najwyższą starannością.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="gallery-item rounded-2xl aspect-[4/3] reveal-scale" style="transition-delay:0.05s">
+                    <img src="http://static.photos/construction/640x360/10" alt="Budowa ścian" class="w-full h-full object-cover rounded-2xl">
+                    <div class="overlay rounded-2xl">
+                        <div>
+                            <p class="text-neon text-xs tracking-wider uppercase mb-1">Roboty murarskie</p>
+                            <p class="text-white font-semibold">Budowa ścian</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item rounded-2xl aspect-[4/3] reveal-scale" style="transition-delay:0.1s">
+                    <img src="http://static.photos/industry/640x360/22" alt="Roboty murarskie" class="w-full h-full object-cover rounded-2xl">
+                    <div class="overlay rounded-2xl">
+                        <div>
+                            <p class="text-neon text-xs tracking-wider uppercase mb-1">Roboty murarskie</p>
+                            <p class="text-white font-semibold">Murowanie konstrukcyjne</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item rounded-2xl aspect-[4/3] reveal-scale" style="transition-delay:0.15s">
+                    <img src="http://static.photos/indoor/640x360/35" alt="Remonty mieszkań" class="w-full h-full object-cover rounded-2xl">
+                    <div class="overlay rounded-2xl">
+                        <div>
+                            <p class="text-neon text-xs tracking-wider uppercase mb-1">Wykończenia</p>
+                            <p class="text-white font-semibold">Remont mieszkania</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item rounded-2xl aspect-[4/3] reveal-scale" style="transition-delay:0.2s">
+                    <img src="http://static.photos/indoor/640x360/44" alt="Wykończenia wnętrz" class="w-full h-full object-cover rounded-2xl">
+                    <div class="overlay rounded-2xl">
+                        <div>
+                            <p class="text-neon text-xs tracking-wider uppercase mb-1">Wykończenia</p>
+                            <p class="text-white font-semibold">Kompleksowe wykończenie</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item rounded-2xl aspect-[4/3] reveal-scale" style="transition-delay:0.25s">
+                    <img src="http://static.photos/construction/640x360/88" alt="Nowoczesna elewacja" class="w-full h-full object-cover rounded-2xl">
+                    <div class="overlay rounded-2xl">
+                        <div>
+                            <p class="text-neon text-xs tracking-wider uppercase mb-1">Budownictwo</p>
+                            <p class="text-white font-semibold">Nowoczesna elewacja</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item rounded-2xl aspect-[4/3] reveal-scale" style="transition-delay:0.3s">
+                    <img src="http://static.photos/construction/640x360/65" alt="Prace budowlane" class="w-full h-full object-cover rounded-2xl">
+                    <div class="overlay rounded-2xl">
+                        <div>
+                            <p class="text-neon text-xs tracking-wider uppercase mb-1">Budownictwo</p>
+                            <p class="text-white font-semibold">Prace budowlane</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- STATYSTYKI -->
+    <section id="statystyki" class="py-24 lg:py-32 relative overflow-hidden grid-pattern">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="inline-block text-xs tracking-[0.3em] uppercase text-neon/70 font-medium mb-4 reveal">W liczbach</span>
+                <h2 class="font-orbitron text-3xl sm:text-4xl lg:text-5xl font-bold text-white reveal">
+                    Nasze <span class="gradient-text">statystyki</span>
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 stagger-children">
+                <div class="glass neon-glow rounded-2xl p-8 text-center group hover:border-neon/20 transition-all duration-300">
+                    <div class="w-14 h-14 rounded-xl bg-neon/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-neon/20 transition-colors duration-300">
+                        <i data-lucide="star" class="w-6 h-6 text-yellow-400 fill-yellow-400"></i>
+                    </div>
+                    <div class="counter-value font-orbitron text-3xl lg:text-4xl font-bold text-white mb-2" data-target="5.0" data-decimal="true">0</div>
+                    <p class="text-xs tracking-[0.15em] uppercase text-silver/40">Ocena klientów</p>
+                </div>
+                <div class="glass neon-glow rounded-2xl p-8 text-center group hover:border-neon/20 transition-all duration-300">
+                    <div class="w-14 h-14 rounded-xl bg-neon/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-neon/20 transition-colors duration-300">
+                        <i data-lucide="message-circle" class="w-6 h-6 text-neon"></i>
+                    </div>
+                    <div class="counter-value font-orbitron text-3xl lg:text-4xl font-bold text-white mb-2" data-target="9">0</div>
+                    <p class="text-xs tracking-[0.15em] uppercase text-silver/40">Opinii klientów</p>
+                </div>
+                <div class="glass neon-glow rounded-2xl p-8 text-center group hover:border-neon/20 transition-all duration-300">
+                    <div class="w-14 h-14 rounded-xl bg-neon/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-neon/20 transition-colors duration-300">
+                        <i data-lucide="hard-hat" class="w-6 h-6 text-neon"></i>
+                    </div>
+                    <div class="counter-value font-orbitron text-3xl lg:text-4xl font-bold text-white mb-2" data-target="100" data-suffix="%">0</div>
+                    <p class="text-xs tracking-[0.15em] uppercase text-silver/40">Profesjonalne wykonawstwo</p>
+                </div>
+                <div class="glass neon-glow rounded-2xl p-8 text-center group hover:border-neon/20 transition-all duration-300">
+                    <div class="w-14 h-14 rounded-xl bg-neon/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-neon/20 transition-colors duration-300">
+                        <i data-lucide="timer" class="w-6 h-6 text-neon"></i>
+                    </div>
+                    <div class="counter-value font-orbitron text-3xl lg:text-4xl font-bold text-white mb-2" data-target="100" data-suffix="%">0</div>
+                    <p class="text-xs tracking-[0.15em] uppercase text-silver/40">Terminowa realizacja</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- MAPA -->
+    <section id="mapa" class="py-24 lg:py-32 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="inline-block text-xs tracking-[0.3em] uppercase text-neon/70 font-medium mb-4 reveal">Lokalizacja</span>
+                <h2 class="font-orbitron text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 reveal">
+                    Znajdź <span class="gradient-text">nas</span>
+                </h2>
+                <p class="text-silver/50 max-w-xl mx-auto text-base reveal">Brzozowa 46, 44-100 Gliwice</p>
+            </div>
+
+            <div class="reveal-scale">
+                <div class="glass neon-glow-strong rounded-2xl overflow-hidden">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2568.5!2d18.6725!3d50.2945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4711735e96b75f8d%3A0x1234567890abcdef!2sBrzozowa%2046%2C%2044-100%20Gliwice!5e0!3m2!1spl!2spl!4v1700000000000!5m2!1spl!2spl" 
+                        width="100%" 
+                        height="450" 
+                        style="border:0; filter: invert(90%) hue-rotate(180deg) brightness(0.8) contrast(1.2);" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        class="w-full">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- KONTAKT -->
+    <section id="kontakt" class="py-24 lg:py-32 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-96 h-96 bg-neon/5 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-neon/5 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="inline-block text-xs tracking-[0.3em] uppercase text-neon/70 font-medium mb-4 reveal">Kontakt</span>
+                <h2 class="font-orbitron text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 reveal">
+                    Skontaktuj się <span class="gradient-text">z nami</span>
+                </h2>
+                <p class="text-silver/50 max-w-2xl mx-auto text-base reveal">
+                    Masz pytania lub chcesz wycenę? Napisz do nas lub zadzwoń — odpowiemy najszybciej jak to możliwe.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-10">
+                <!-- Contact Info -->
+                <div class="lg:col-span-2 space-y-6 reveal-left">
+                    <div class="glass neon-glow rounded-2xl p-8">
+                        <h3 class="font-orbitron text-lg font-bold text-white mb-6">Dane firmy</h3>
+                        <div class="space-y-5">
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-lg bg-neon/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <i data-lucide="building" class="w-4 h-4 text-neon"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-silver/40 uppercase tracking-wider mb-1">Nazwa firmy</p>
+                                    <p class="text-white font-medium text-sm">FIRMA USŁUGOWA PMSB ANDRZEJ KISŁO</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-lg bg-neon/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <i data-lucide="map-pin" class="w-4 h-4 text-neon"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-silver/40 uppercase tracking-wider mb-1">Adres</p>
+                                    <p class="text-white font-medium text-sm">Brzozowa 46<br>44-100 Gliwice</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-lg bg-neon/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <i data-lucide="phone" class="w-4 h-4 text-neon"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-silver/40 uppercase tracking-wider mb-1">Telefon</p>
+                                    <a href="tel:518100889" class="text-neon font-medium text-sm hover:text-neon-light transition-colors">518 100 889</a>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-lg bg-neon/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <i data-lucide="file-text" class="w-4 h-4 text-neon"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-silver/40 uppercase tracking-wider mb-1">NIP</p>
+                                    <p class="text-white font-medium text-sm">6312736145</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-lg bg-neon/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <i data-lucide="building-2" class="w-4 h-4 text-neon"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-silver/40 uppercase tracking-wider mb-1">REGON</p>
+                                    <p class="text-white font-medium text-sm">543218336</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CTA -->
+                    <div class="glass neon-glow rounded-2xl p-8 bg-gradient-to-br from-neon/10 to-transparent">
+                        <h3 class="font-orbitron text-lg font-bold text-white mb-3">Zadzwoń teraz</h3>
+                        <p class="text-silver/50 text-sm mb-5">Szybka wycena i bezpłatna konsultacja</p>
+                        <a href="tel:518100889" class="btn-neon bg-neon text-dark-950 px-6 py-3 rounded-xl font-semibold tracking-wide flex items-center justify-center gap-2 text-sm hover:bg-neon-light w-full">
+                            <i data-lucide="phone" class="w-4 h-4"></i>
+                            518 100 889
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="lg:col-span-3 reveal-right">
+                    <div class="glass neon-glow-strong rounded-2xl p-8 md:p-10">
+                        <h3 class="font-orbitron text-lg font-bold text-white mb-8">Wyślij zapytanie</h3>
+                        <form id="contactForm" class="space-y-5">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label class="block text-xs text-silver/40 uppercase tracking-wider mb-2">Imię *</label>
+                                    <input type="text" name="name" required class="form-input w-full px-4 py-3 rounded-xl text-white text-sm placeholder:text-silver/20" placeholder="Twoje imię">
+                                </div>
+                                <div>
+                                    <label class="block text-xs text-silver/40 uppercase tracking-wider mb-2">Telefon *</label>
+                                    <input type="tel" name="phone" required class="form-input w-full px-4 py-3 rounded-xl text-white text-sm placeholder:text-silver/20" placeholder="Twój numer telefonu">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-xs text-silver/40 uppercase tracking-wider mb-2">Email *</label>
+                                <input type="email" name="email" required class="form-input w-full px-4 py-3 rounded-xl text-white text-sm placeholder:text-silver/20" placeholder="Twój adres email">
+                            </div>
+                            <div>
+                                <label class="block text-xs text-silver/40 uppercase tracking-wider mb-2">Wiadomość *</label>
+                                <textarea name="message" required rows="5" class="form-input w-full px-4 py-3 rounded-xl text-white text-sm placeholder:text-silver/20 resize-none" placeholder="Opisz swoje zapytanie..."></textarea>
+                            </div>
+                            <button type="submit" class="btn-neon bg-neon text-dark-950 px-8 py-4 rounded-xl font-semibold tracking-wide flex items-center justify-center gap-2 text-sm hover:bg-neon-light w-full">
+                                <i data-lucide="send" class="w-4 h-4"></i>
+                                Wyślij zapytanie
+                            </button>
+                        </form>
+                        <div id="formSuccess" class="hidden mt-6 glass rounded-xl p-6 text-center">
+                            <i data-lucide="check-circle" class="w-12 h-12 text-neon mx-auto mb-3"></i>
+                            <p class="text-white font-semibold text-lg mb-1">Wiadomość wysłana!</p>
+                            <p class="text-silver/50 text-sm">Odezwiemy się najszybciej jak to możliwe.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-white/5 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-neon to-neon-dark flex items-center justify-center font-orbitron font-bold text-dark-950 text-sm">P</div>
+                        <div>
+                            <span class="font-orbitron font-bold text-white text-sm tracking-wider">PMSB</span>
+                            <span class="block text-[10px] text-neon/60 tracking-[0.2em] uppercase">Andrzej Kisło</span>
+                        </div>
+                    </div>
+                    <p class="text-silver/40 text-sm leading-relaxed">
+                        Profesjonalne roboty murarskie, wykończenia wnętrz oraz usługi budowlane w Gliwicach i okolicach.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold text-sm mb-4 tracking-wide">Usługi</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#uslugi" class="text-silver/40 text-sm hover:text-neon transition-colors duration-300">Roboty murarskie</a></li>
+                        <li><a href="#uslugi" class="text-silver/40 text-sm hover:text-neon transition-colors duration-300">Wykończenia wnętrz</a></li>
+                        <li><a href="#uslugi" class="text-silver/40 text-sm hover:text-neon transition-colors duration-300">Sprzątanie obiektów</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold text-sm mb-4 tracking-wide">Kontakt</h4>
+                    <ul class="space-y-2">
+                        <li class="text-silver/40 text-sm flex items-center gap-2"><i data-lucide="map-pin" class="w-3 h-3 text-neon"></i> Brzozowa 46, 44-100 Gliwice</li>
+                        <li><a href="tel:518100889" class="text-silver/40 text-sm flex items-center gap-2 hover:text-neon transition-colors"><i data-lucide="phone" class="w-3 h-3 text-neon"></i> 518 100 889</a></li>
+                        <li class="text-silver/40 text-sm flex items-center gap-2"><i data-lucide="file-text" class="w-3 h-3 text-neon"></i> NIP: 6312736145</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/5 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <p class="text-silver/30 text-xs">&copy; 2025 FIRMA USŁUGOWA PMSB ANDRZEJ KISŁO. Wszelkie prawa zastrzeżone.</p>
+                <p class="text-silver/20 text-xs">Indywidualna działalność gospodarcza</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- LIGHTBOX -->
+    <div id="lightbox" class="lightbox">
+        <button id="lightboxClose" class="absolute top-6 right-6 text-white/70 hover:text-white transition-colors z-10">
+            <i data-lucide="x" class="w-8 h-8"></i>
+        </button>
+        <img id="lightboxImg" src="" alt="Realizacja">
+    </div>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // ============ LOADING SCREEN ============
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loader').classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }, 2200);
+        });
+
+        // ============ NAVBAR SCROLL ============
+        const navbar = document.getElementById('navbar');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.scrollY;
+            if (currentScroll > 50) {
+                navbar.classList.add('nav-scrolled');
+            } else {
+                navbar.classList.remove('nav-scrolled');
+            }
+            lastScroll = currentScroll;
+        });
+
+        // ============ MOBILE MENU ============
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenuClose = document.getElementById('mobileMenuClose');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        });
+
+        mobileMenuClose.addEventListener('click', () => {
+            mobileMenu.classList.remove('open');
+            document.body.style.overflow = 'auto';
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+                document.body.style.overflow = 'auto';
+            });
+        });
+
+        // ============ SCROLL REVEAL ============
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .stagger-children').forEach(el => {
+            revealObserver.observe(el);
+        });
+
+        // ============ COUNTER ANIMATION ============
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    const target = parseFloat(el.dataset.target);
+                    const isDecimal = el.dataset.decimal === 'true';
+                    const suffix = el.dataset.suffix || '';
+                    const duration = 2000;
+                    const start = performance.now();
+
+                    function updateCounter(currentTime) {
+                        const elapsed = currentTime - start;
+                        const progress = Math.min(elapsed / duration, 1);
+                        const eased = 1 - Math.pow(1 - progress, 3);
+                        const current = target * eased;
+
+                        if (isDecimal) {
+                            el.textContent = current.toFixed(1) + suffix;
+                        } else {
+                            el.textContent = Math.floor(current) + suffix;
+                        }
+
+                        if (progress < 1) {
+                            requestAnimationFrame(updateCounter);
+                        } else {
+                            if (isDecimal) {
+                                el.textContent = target.toFixed(1) + suffix;
+                            } else {
+                                el.textContent = target + suffix;
+                            }
+                        }
+                    }
+
+                    requestAnimationFrame(updateCounter);
+                    counterObserver.unobserve(el);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.counter-value').forEach(el => {
+            counterObserver.observe(el);
+        });
+
+        // ============ TESTIMONIAL SLIDER ============
+        let currentSlide = 0;
+        const totalSlides = 3;
+        const track = document.getElementById('testimonialTrack');
+        const dots = document.querySelectorAll('.slider-dot');
+        let autoSlideInterval;
+
+        function goToSlide(index) {
+            currentSlide = index;
+            track.style.transform = `translateX(-${currentSlide * 100}%)`;
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('bg-neon', i === currentSlide);
+                dot.classList.toggle('bg-silver/20', i !== currentSlide);
+                dot.classList.toggle('w-6', i === currentSlide);
+                dot.classList.toggle('w-2', i !== currentSlide);
+            });
+        }
+
+        document.getElementById('nextTestimonial').addEventListener('click', () => {
+            goToSlide((currentSlide + 1) % totalSlides);
+            resetAutoSlide();
+        });
+
+        document.getElementById('prevTestimonial').addEventListener('click', () => {
+            goToSlide((currentSlide - 1 + totalSlides) % totalSlides);
+            resetAutoSlide();
+        });
+
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                goToSlide(parseInt(dot.dataset.index));
+                resetAutoSlide();
+            });
+        });
+
+        function startAutoSlide() {
+            autoSlideInterval = setInterval(() => {
+                goToSlide((currentSlide + 1) % totalSlides);
+            }, 5000);
+        }
+
+        function resetAutoSlide() {
+            clearInterval(autoSlideInterval);
+            startAutoSlide();
+        }
+
+        startAutoSlide();
+
+        // ============ GALLERY LIGHTBOX ============
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const lightboxClose = document.getElementById('lightboxClose');
+
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const img = item.querySelector('img');
+                lightboxImg.src = img.src;
+                lightboxImg.alt = img.alt;
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        lightboxClose.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // ============ CONTACT FORM ============
+        const contactForm = document.getElementById('contactForm');
+        const formSuccess = document.getElementById('formSuccess');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Simulate form submission
+            const btn = contactForm.querySelector('button[type="submit"]');
+            btn.innerHTML = '<i data-lucide="loader" class="w-4 h-4 animate-spin"></i> Wysyłanie...';
+            btn.disabled = true;
+            lucide.createIcons();
+
+            setTimeout(() => {
+                contactForm.style.display = 'none';
+                formSuccess.classList.remove('hidden');
+                lucide.createIcons();
+            }, 1500);
+        });
+
+        // ============ PARTICLES ============
+        const particlesContainer = document.getElementById('particles');
+        const particleCount = 30;
+
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.top = Math.random() * 100 + '%';
+            particle.style.opacity = Math.random() * 0.5 + 0.1;
+            particle.style.width = Math.random() * 3 + 1 + 'px';
+            particle.style.height = particle.style.width;
+            particle.style.animation = `floatAnim ${Math.random() * 10 + 10}s ease-in-out infinite`;
+            particle.style.animationDelay = `-${Math.random() * 10}s`;
+            particlesContainer.appendChild(particle);
+        }
+
+        // ============ SMOOTH SCROLL FOR ANCHOR LINKS ============
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.getBoundingClientRect().top + window.scrollY - 80;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // ============ INITIAL REVEAL FOR HERO ============
+        setTimeout(() => {
+            document.querySelectorAll('#hero .reveal').forEach(el => {
+                el.classList.add('active');
+            });
+        }, 200);
+    </script>
+<script src="https://deepsite.hf.co/deepsite-badge.js"></script>
+</body>
+</html>
